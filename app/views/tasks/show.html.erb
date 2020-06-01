@@ -1,0 +1,16 @@
+<h1>id: <%= @task.id %> のタスク詳細ページ</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ステータス</th>
+        <td><%= @task.status %></td>
+    </tr>
+    <tr>
+        <th>タスク</th>
+        <td><%= @task.content %></td>
+    </tr>
+</table>
+
+<%= link_to '編集', edit_task_path(@task) %>
+<%= link_to '削除', @task, method: :delete, data: { confirm: '本当に削除しますか'} %>
+<%= link_to '一覧に戻る', tasks_path %>
